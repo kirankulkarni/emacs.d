@@ -19,3 +19,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; ELPA 
+(require 'package)
+(package-initialize)
+
+;;; Packages
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
