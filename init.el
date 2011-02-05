@@ -20,9 +20,29 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;; Taken from Starter-kit
+;;Emacs load path
+(let* ((my-lisp-dir "~/.emacs.d/")
+       (default-directory my-lisp-dir)
+       (orig-load-path load-path))
+  (setq load-path (cons my-lisp-dir nil))
+  (normal-top-level-add-subdirs-to-load-path)
+  (nconc load-path orig-load-path))
+
+;; Load path etc.
+
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
+
+;;My files
+(add-to-list 'load-path (concat dotfiles-dir "/plugins"))
+
 ;;; ELPA 
 (require 'package)
 (package-initialize)
 
 ;;; Packages
 (add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
+
+;;; color-theme
+(color-theme-zenburn)
