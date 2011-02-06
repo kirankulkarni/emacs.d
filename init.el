@@ -36,6 +36,7 @@
 
 ;;My files
 (add-to-list 'load-path (concat dotfiles-dir "/plugins"))
+(add-to-list 'load-path (concat dotfiles-dir "/configurations"))
 
 ;;; ELPA 
 (require 'package)
@@ -46,3 +47,6 @@
 
 ;;; color-theme
 (color-theme-zenburn)
+
+;; Require my customizations
+(require 'kk-customizations)
