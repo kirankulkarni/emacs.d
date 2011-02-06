@@ -6,5 +6,8 @@
 ;; Keybindings
 (require 'key-bindings)
 
+;; util functions
+(require 'util-functions)
+
 ;; End of my customizations
 (provide 'kk-customizations)
