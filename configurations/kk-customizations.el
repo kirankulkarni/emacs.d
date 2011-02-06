@@ -3,5 +3,8 @@
 ;; ido mode configuration
 (require 'ido-mode-config)
 
+;; Keybindings
+(require 'key-bindings)
+
 ;; End of my customizations
 (provide 'kk-customizations)
