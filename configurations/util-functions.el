@@ -1,5 +1,18 @@
 ;; Utility Functions
 
+
+;; Copied from CDK
+;;settings for hippie-expand
+(setq hippie-expand-try-functions-list
+       '(try-expand-dabbrev
+         try-expand-dabbrev-from-kill
+         try-expand-dabbrev-all-buffers
+         try-complete-file-name-partially
+         try-complete-file-name
+         try-complete-lisp-symbol-partially
+         try-complete-lisp-symbol))
+
+
 ;;function to implement a smarter TAB
 (defun smart-tab ()
   "This smart tab is minibuffer compliant: it acts as usual in

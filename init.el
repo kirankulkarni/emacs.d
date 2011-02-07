@@ -20,6 +20,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+(show-paren-mode 1) ;;Show paren matching 
+
 ;;; Taken from Starter-kit
 ;;Emacs load path
 (let* ((my-lisp-dir "~/.emacs.d/")

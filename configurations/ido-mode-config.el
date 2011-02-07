@@ -1,9 +1,6 @@
 ;; Configuration for ido-mode
 
-;; Copied from CDK emacs config
-(ido-mode t)
-(ido-everywhere t)
-
+;; Setting ido 
 (setq 
   ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
   ido-case-fold  t
@@ -19,6 +16,11 @@
   ido-enable-tramp-completion t
   ;; do not ask for confirmation
   confirm-nonexistent-file-or-buffer nil)
+
+;; Copied from CDK emacs config
+(ido-mode t)
+(ido-everywhere t)
+
 
 ;; Copied from Vedang's emacs config
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
