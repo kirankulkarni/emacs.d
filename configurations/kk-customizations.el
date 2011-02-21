@@ -9,5 +9,8 @@
 ;; util functions
 (require 'util-functions)
 
+;; org mode configuration
+(require 'org-mode-config)
+
 ;; End of my customizations
 (provide 'kk-customizations)
