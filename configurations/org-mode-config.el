@@ -9,9 +9,6 @@
 ;; (global-set-key "\C-c L" 'org-insert-link-global)
 ;; (global-set-key "\C-c o" 'org-open-at-point-global)
 
-;; END of org mode configuration
-(provide 'org-mode-config)
-
 ;; Crating custom sparse trees
 ;; use C-c a <key> 
 ;; following "FIXME" is just an example.
@@ -28,3 +25,6 @@
 
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
+
+;; END of org mode configuration
+(provide 'org-mode-config)
