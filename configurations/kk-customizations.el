@@ -12,5 +12,8 @@
 ;; org mode configuration
 (require 'org-mode-config)
 
+;; Python customizations
+(require 'python-mode-config)
+
 ;; End of my customizations
 (provide 'kk-customizations)
