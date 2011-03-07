@@ -12,6 +12,9 @@
 ;; org mode configuration
 (require 'org-mode-config)
 
+;; Auto-Complete configuration
+(require 'auto-complete-mode-config)
+
 ;; Python customizations
 (require 'python-mode-config)
 
