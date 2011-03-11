@@ -1,5 +1,10 @@
 ;; My customizatoin file where I will load mode-specific customizations
 
+;; Don't clutter up directories with files~
+;; copied from Vedang
+(setq backup-directory-alist `(("." . ,(expand-file-name
+                                        (concat dotfiles-dir "backups")))))
+
 ;; ido mode configuration
 (require 'ido-mode-config)
 

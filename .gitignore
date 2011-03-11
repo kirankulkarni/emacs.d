@@ -3,3 +3,6 @@
 /cache
 *.elc
 *.dat
+tramp
+backups/
+eshell
