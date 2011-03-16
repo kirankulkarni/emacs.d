@@ -9,5 +9,5 @@
 (pymacs-load "ropemacs" "rope-")
 
 (setq ropemacs-enable-autoimport t)
-
+(require 'flymake)
 (provide 'python-mode-config)

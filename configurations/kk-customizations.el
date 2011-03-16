@@ -23,5 +23,9 @@
 ;; Python customizations
 (require 'python-mode-config)
 
+;; Flymake
+(require 'flymake-config)
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+
 ;; End of my customizations
 (provide 'kk-customizations)
