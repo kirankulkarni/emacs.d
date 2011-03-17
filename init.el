@@ -40,6 +40,9 @@
 (add-to-list 'load-path (concat dotfiles-dir "/plugins"))
 (add-to-list 'load-path (concat dotfiles-dir "/configurations"))
 
+;; Common libraries
+(require 'uniquify)
+
 ;;; ELPA 
 (require 'package)
 (package-initialize)
@@ -75,5 +78,6 @@
 (define-minor-mode no-easy-keys-minor-mode
   "A minor mode that disables the arrow-keys, pg-up/down, delete
   and backspace."  t " no-easy-keys"
+
   'no-easy-keys-minor-mode-map :global t)
 (no-easy-keys-minor-mode 1)

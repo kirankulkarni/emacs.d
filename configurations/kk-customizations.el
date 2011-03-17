@@ -27,5 +27,8 @@
 (require 'flymake-config)
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
+;; Uniquify configuration
+(setq uniquify-buffer-name-style 'post-forward)
+
 ;; End of my customizations
 (provide 'kk-customizations)
