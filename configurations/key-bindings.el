@@ -41,5 +41,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;; End of key-bindings
 (provide 'key-bindings)
