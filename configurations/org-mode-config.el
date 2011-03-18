@@ -20,6 +20,29 @@
 (setq org-list-demote-modify-bullet
       '(("+" . "-") ("-" . "+") ("*" . "+")))
 
+;; ---------------
+;; TODO keywords
+;; ---------------
+
+;; Org Fast tag selection
+(setq org-use-fast-todo-selection t)
+;; Org log note or time based on keyword action
+(setq org-log-into-drawer t)
+;; ! insert timestamp
+;; @ Insert a note
+;; / seperates entering action and leaving action of a state
+(setq org-todo-keywords (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "VERIFIED(v!/!)" "JUNKED(j@/!)"))))
+
+;; Colorize your keywords
+(setq org-todo-keyword-faces
+      (quote (("TODO"      :foreground "red"          :weight bold)
+	      ("ACTIVE"    :foreground "orange"       :weight bold)
+	      ("WAITING"   :foreground "yellow"       :weight bold)
+	      ("COMMITTED" :foreground "lightblue"    :weight bold)
+	      ("VERIFIED"  :foreground "forest green" :weight bold)
+              ("JUNKED"    :foreground "lightgreen"   :weight bold))))
+
+
 ;; Align all tables at startup
 (setq org-startup-align-all-tables t)
 
