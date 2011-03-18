@@ -44,5 +44,8 @@
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; pop mark
+(global-set-key (kbd "M-j") 'pop-to-mark-command)
+
 ;; End of key-bindings
 (provide 'key-bindings)
