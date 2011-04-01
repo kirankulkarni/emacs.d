@@ -1,4 +1,4 @@
-;; Copied from Org-mode manual
+ ;; Copied from Org-mode manual
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
@@ -31,7 +31,7 @@
 ;; ! insert timestamp
 ;; @ Insert a note
 ;; / seperates entering action and leaving action of a state
-(setq org-todo-keywords (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "VERIFIED(v!/!)" "JUNKED(j@/!)"))))
+(setq org-todo-keywords (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)"))))
 
 ;; Colorize your keywords
 (setq org-todo-keyword-faces
@@ -40,11 +40,30 @@
 	      ("WAITING"   :foreground "yellow"       :weight bold)
 	      ("COMMITTED" :foreground "lightblue"    :weight bold)
 	      ("VERIFIED"  :foreground "forest green" :weight bold)
+	      ("DONE"  :foreground "forest green" :weight bold)
               ("JUNKED"    :foreground "lightgreen"   :weight bold))))
 
 
 ;; Align all tables at startup
 (setq org-startup-align-all-tables t)
+
+;; Read more about TODO habits might be useful for Agenda views later
+
+;; ;; Priorities Will be needed for Agenda Views
+;; (setq org-highest-priority)
+;; (setq org-lowest-priority)
+;; (setq org-default-priority)
+
+
+;; Tags
+(setq org-tag-alist '((:startgroup . nil)
+		      ("@work" . ?w)
+		      ("@personal" . ?p)
+		      (:endgroup . nil)
+		      (:startgroup . nil)
+		      ("HighPri" . ?h)
+		      ("LowPri" . ?l)
+		      (:endgroup)))
 
 ;; Calc package is needed for making spreadsheets
 (require 'calc)

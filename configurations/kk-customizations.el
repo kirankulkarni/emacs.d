@@ -5,6 +5,8 @@
 (setq backup-directory-alist `(("." . ,(expand-file-name
                                         (concat dotfiles-dir "backups")))))
 
+;; Use 'Y' or 'N' to answer Yes/No 
+(defalias 'yes-or-no-p 'y-or-n-p)
 ;; ido mode configuration
 (require 'ido-mode-config)
 
