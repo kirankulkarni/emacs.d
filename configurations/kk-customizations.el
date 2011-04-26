@@ -19,6 +19,9 @@
 ;; org mode configuration
 (require 'org-mode-config)
 
+;; Magit configuration
+(require 'magit-config)
+
 ;; Auto-Complete configuration
 (require 'auto-complete-mode-config)
 

@@ -47,5 +47,9 @@
 ;; pop mark
 (global-set-key (kbd "M-j") 'pop-to-mark-command)
 
+;; rgrep shortcut
+(global-set-key (kbd "C-x r") 'rgrep)
+
+
 ;; End of key-bindings
 (provide 'key-bindings)
