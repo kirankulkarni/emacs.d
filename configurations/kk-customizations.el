@@ -5,6 +5,9 @@
 (setq backup-directory-alist `(("." . ,(expand-file-name
                                         (concat dotfiles-dir "backups")))))
 
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+
 ;; Use 'Y' or 'N' to answer Yes/No 
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; ido mode configuration
@@ -34,6 +37,12 @@
 
 ;; Uniquify configuration
 (setq uniquify-buffer-name-style 'post-forward)
+
+;; GO Mode config
+(require 'go-mode-config)
+
+;; Latex Mode
+(require 'latex-mode-config)
 
 ;; End of my customizations
 (provide 'kk-customizations)

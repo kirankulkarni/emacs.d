@@ -68,5 +68,90 @@
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
 
+;; I don't want org mode to export a_b as a subscript b in latex.
+;; I mostly write code documents and this is never the intended behavior
+;; Copied from Vedang Manerikar's configuration
+(setq org-export-with-sub-superscripts nil)
+;; Copied from Vedang Manerikar
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+;; allow for export=>beamer by placing #+LaTeX_CLASS: beamer in org files
+(add-to-list 'org-export-latex-classes
+             ;; beamer class, for presentations
+             '("beamer"
+               "\\documentclass[11pt]{beamer}\n
+      \\mode<{{{beamermode}}}>\n
+      \\usetheme{{{{beamertheme}}}}\n
+      \\usecolortheme{{{{beamercolortheme}}}}\n
+      \\beamertemplateballitem\n
+      \\setbeameroption{show notes}
+      \\usepackage{color}
+      \\usepackage{listings}
+      \\lstset{numbers=none,language=[ISO]C++,tabsize=4,
+  frame=single,
+  basicstyle=\\small,
+  showspaces=false,showstringspaces=false,
+  showtabs=false,
+  keywordstyle=\\color{blue}\\bfseries,
+  commentstyle=\\color{red},
+  }\n
+      \\usepackage{verbatim}\n
+      \\institute{{{{beamerinstitute}}}}\n
+       \\subject{{{{beamersubject}}}}\n"
+
+               ("\\section{%s}" . "\\section*{%s}")
+
+               ("\\begin{frame}[fragile]\\frametitle{%s}"
+                "\\end{frame}"
+                "\\begin{frame}[fragile]\\frametitle{%s}"
+                "\\end{frame}")))
+
+;; letter class, for formal letters
+(add-to-list 'org-export-latex-classes
+
+             '("letter"
+               "\\documentclass[11pt]{letter}\n
+      \\usepackage{color}\n
+      \\usepackage{listings}
+      \\lstset{numbers=none,language=[ISO]C++,tabsize=4,
+  frame=single,
+  basicstyle=\\small,
+  showspaces=false,showstringspaces=false,
+  showtabs=false,
+  keywordstyle=\\color{blue}\\bfseries,
+  commentstyle=\\color{red},
+  }\n
+      \\usepackage{verbatim}\n"
+
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+;; article class, for articles
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass[10pt]{article}
+\\usepackage{color}
+\\usepackage{listings}
+\\lstset{numbers=none,language=[ISO]C++,tabsize=4,
+  frame=single,
+  basicstyle=\\small,
+  showspaces=false,showstringspaces=false,
+  showtabs=false,
+  keywordstyle=\\color{blue}\\bfseries,
+  commentstyle=\\color{red},
+  }\n
+\\usepackage{verbatim}\n
+\\usepackage[left=1in,top=1in,right=1in,bottom=1in,head=0.2in,foot=0.2in]{geometry}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+
+
 ;; END of org mode configuration
 (provide 'org-mode-config)
