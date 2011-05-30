@@ -44,5 +44,11 @@
 ;; Latex Mode
 (require 'latex-mode-config)
 
+;; Erlang mode
+(require 'erlang-mode-config)
+
+;; ERC
+(require 'erc-mode-config)
+
 ;; End of my customizations
 (provide 'kk-customizations)
