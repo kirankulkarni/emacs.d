@@ -51,7 +51,9 @@
 (add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
 
 ;;; color-theme
-(color-theme-zenburn)
+(require 'color-theme)
+(require 'color-theme-billw)
+(color-theme-billw)
 
 ;; Require my customizations
 (require 'kk-customizations)
