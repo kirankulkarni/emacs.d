@@ -31,5 +31,12 @@
 	(indent-for-tab-command)))))
 (global-set-key (kbd "TAB") 'smart-tab)
 
+(when (executable-find "wmctrl") ; apt-get install wmctrl
+  (defun full-screen-toggle ()
+    (interactive)
+    (shell-command "wmctrl -r :ACTIVE: -btoggle,fullscreen"))
+  (global-set-key (kbd "<M-return>") 'full-screen-toggle))
+
+
 ;;End of the 
 (provide 'util-functions)
