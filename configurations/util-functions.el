@@ -38,5 +38,14 @@
   (global-set-key (kbd "<M-return>") 'full-screen-toggle))
 
 
+(defun pretty-lambdas ()
+  (font-lock-add-keywords
+   nil `(("(?\\(lambda\\>\\)"
+          (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                    ,(make-char 'greek-iso8859-7 107))
+                    nil))))))
+(add-hook 'python-mode-hook 'pretty-lambdas)
+
+
 ;;End of the 
 (provide 'util-functions)
