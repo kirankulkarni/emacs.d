@@ -20,6 +20,9 @@
 
 (add-to-list 'flymake-allowed-file-name-masks '("\\.erl\\'" flymake-erlang-init))
 
+;; Remove html from flymake list
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
+
 ;; From Vedang
 (load-library "flymake-cursor")
 (global-set-key [f2] 'flymake-goto-prev-error)
