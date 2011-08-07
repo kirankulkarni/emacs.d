@@ -13,11 +13,14 @@
 ;; ido mode configuration
 (require 'ido-mode-config)
 
-;; Keybindings
-(require 'key-bindings)
-
 ;; util functions
 (require 'util-functions)
+
+;; lisp-mode configuration
+(require 'lisp-mode-config)
+
+;; Keybindings
+(require 'key-bindings)
 
 ;; org mode configuration
 (require 'org-mode-config)
