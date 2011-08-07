@@ -46,6 +46,8 @@
                     nil))))))
 (add-hook 'python-mode-hook 'pretty-lambdas)
 
+(defun turn-on-paredit ()
+  (paredit-mode t))
 
 ;;End of the 
 (provide 'util-functions)

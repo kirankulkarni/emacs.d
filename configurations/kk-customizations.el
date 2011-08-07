@@ -4,6 +4,10 @@
 ;; copied from Vedang
 (setq backup-directory-alist `(("." . ,(expand-file-name
                                         (concat dotfiles-dir "backups")))))
+;; Paredit
+(autoload 'paredit-mode "paredit"
+  "Minor mode for pseudo-structurally editing Lisp code."
+  t)
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -52,6 +56,9 @@
 
 ;; ERC
 (require 'erc-mode-config)
+
+;; HTML
+(require 'html-mode-config)
 
 ;; End of my customizations
 (provide 'kk-customizations)

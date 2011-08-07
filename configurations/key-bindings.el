@@ -50,6 +50,9 @@
 ;; rgrep shortcut
 (global-set-key (kbd "C-x r") 'rgrep)
 
+;; paredit
+(eval-after-load 'paredit
+  '(define-key paredit-mode-map (kbd "C-o") 'paredit-open-round))
 
 ;; End of key-bindings
 (provide 'key-bindings)
