@@ -60,5 +60,8 @@
 ;; HTML
 (require 'html-mode-config)
 
+;; Clojure
+(require 'clojure-mode-config)
+
 ;; End of my customizations
 (provide 'kk-customizations)
