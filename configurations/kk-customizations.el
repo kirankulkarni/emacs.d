@@ -63,5 +63,8 @@
 ;; Clojure
 (require 'clojure-mode-config)
 
-;; End of my customizations
+;;; Locale setting
+(require 'mylocale)
+
+;; end of my customizations
 (provide 'kk-customizations)
