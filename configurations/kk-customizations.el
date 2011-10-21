@@ -66,5 +66,8 @@
 ;;; Locale setting
 (require 'mylocale)
 
+;;; Octave-mode
+(require 'octave-mode-config)
+
 ;; end of my customizations
 (provide 'kk-customizations)
