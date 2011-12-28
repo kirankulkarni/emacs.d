@@ -56,3 +56,6 @@
 
 ;; End of key-bindings
 (provide 'key-bindings)
+
+;;; Because C-M-t is taken by gnome-terminal in ubuntu, assigning C-S-t to it
+(global-set-key (kbd "C-S-t") 'transpose-sexps)
