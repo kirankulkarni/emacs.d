@@ -1,5 +1,6 @@
 # contributor: Prajwalit <contact@prajwalit.com>
 # name: scripts_footer
+# key: footer
 # --
 {% block scripts_footer %}
 {{ super() }}

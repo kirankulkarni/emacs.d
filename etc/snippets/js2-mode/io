@@ -1,4 +1,5 @@
 # contributor: Prajwalit <contact@prajwalit.com>
 # name: io
+# key: io
 # --
 "io-base", "json-parse", "querystring-stringify",$0

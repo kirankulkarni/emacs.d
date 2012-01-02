@@ -1,5 +1,6 @@
 # contributor: Prajwalit <contact@prajwalit.com>
 # name: name
+# key: Yanim
 # --
 var anim = new Y.Anim({
   node: element,

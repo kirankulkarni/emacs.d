@@ -1,4 +1,5 @@
 # contributor: Prajwalit <contact@prajwalit.com>
 # name: External JS Script Tag
+# key: js
 # --
 <script type="text/javascript" src="{{url_for('home.static', filename=config.js+'$0.js')}}"></script>

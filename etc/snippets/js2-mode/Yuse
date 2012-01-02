@@ -1,5 +1,6 @@
 # contributor: Prajwalit <contact@prajwalit.com>
 # name: YUI use
+# key: Yuse
 # --
 YUI ().use ("node", function (Y) {
   $0

@@ -1,4 +1,5 @@
 #name: defn
+#key: defn
 # --
 (defn ${1:name} ${2:
   "${3:doc-string}"

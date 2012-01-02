@@ -1,5 +1,6 @@
 # contributor: Prajwalit <contact@prajwalit.com>
 # name: My Google Analytics Code
+# key: ga
 # --
 <script type="text/javascript">
   var _gaq = _gaq || [];
