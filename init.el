@@ -36,6 +36,8 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 
+(setq dotfiles-etc-dir (concat dotfiles-dir "etc/"))
+
 ;;My files
 (add-to-list 'load-path (concat dotfiles-dir "/plugins"))
 (add-to-list 'load-path (concat dotfiles-dir "/configurations"))

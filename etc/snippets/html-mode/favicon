@@ -1,0 +1,6 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: FavIcon
+# --
+<link rel="icon" type="image/vnd.microsoft.icon" href="${images/favicon.png}" />
+<link rel="shortcut icon" href="${images/favicon.png}" />
+$0

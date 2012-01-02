@@ -1,0 +1,4 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: Display: none
+# --
+setStyle ("display", "none");

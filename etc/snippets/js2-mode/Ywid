@@ -1,0 +1,91 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: YUI widget
+# --
+
+/**
+ * This method (just) registers the module so that it can attached to a YUI instance
+ * via the use method. It's executed at YUI().use(...) phase.
+ */
+YUI.add("qotd-${1:moduleName}", function(Y) {
+
+  /**
+   * @class Y.${2:namespace}
+   * @example -
+   *
+   *
+   */
+  Y.$2 = Y.Base.create ("$1", Y.Widget, [], {
+
+    /**
+     * BOUNDING_TEMPLATE is the outer wrapper of the widget.
+     */
+    BOUNDING_TEMPLATE: "<div></div>",
+    
+    /**
+     * CONTENT_TEMPLATE is the inner wrapper of the widget.
+     */
+    CONTENT_TEMPLATE: "<div></div>",
+    
+    /**
+     * Constructor for $2.
+     */
+    initializer: function (config) {
+      Y.log ("Initializing $1");
+      $0
+    },
+    
+    /**
+     * Destructor for $2.
+     */
+    destructor: function () {
+
+    },
+
+    /**
+     * Renderer function for $2.
+     * This function gets called when render() function gets executed.
+     */
+    renderer: function () {
+      this.renderUI ();
+      this.bindUI ();
+      this.syncUI ();
+    },
+
+    /**
+     * RenderUI function for $2.
+     * This method is responsible for creating and adding the nodes which
+     * the widget needs into the document.
+     */
+    renderUI: function () {
+
+    },
+
+    /**
+     * BindUI function for $2.
+     * This method is responsible for attaching event listeners which bind the UI
+     * to the widget state. 
+     */
+    bindUI: function () {
+
+    },
+
+    /**
+     * SyncUI function for $2.
+     * This method is responsible for setting the initial state of the UI based on
+     * the current state of the widget at the time of rendering.
+     */
+    syncUI: function () {
+
+    }
+    
+  }, {
+
+    /**
+     * Config attributes for $2 go here.
+     */
+    ATTRS: {
+      
+    }
+  });
+
+}, "0.0.1", {requires:["widget", "base-build"$3]});

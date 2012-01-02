@@ -17,9 +17,6 @@
 ;; ido mode configuration
 (require 'ido-mode-config)
 
-;; util functions
-(require 'util-functions)
-
 ;; lisp-mode configuration
 (require 'lisp-mode-config)
 
@@ -71,6 +68,12 @@
 
 ;;; JS2 mode config
 (require 'js-mode-config)
+
+;;; Yasnippets
+(require 'yasnippet-config)
+
+;; util functions
+(require 'util-functions)
 
 ;; end of my customizations
 (provide 'kk-customizations)

@@ -4,7 +4,8 @@
 ;; Copied from CDK
 ;;settings for hippie-expand
 (setq hippie-expand-try-functions-list
-       '(try-expand-dabbrev
+       '(yas/hippie-try-expand
+         try-expand-dabbrev
          try-expand-dabbrev-from-kill
          try-expand-dabbrev-all-buffers
          try-complete-file-name-partially

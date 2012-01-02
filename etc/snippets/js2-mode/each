@@ -1,0 +1,6 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: Array each
+# --
+each (function(node, index) {
+  $0
+});

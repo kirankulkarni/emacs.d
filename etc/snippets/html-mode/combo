@@ -1,0 +1,4 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: External "combojs" script tag
+# --
+<script type="text/javascript" src="{{ combojs('$0') }}"></script>

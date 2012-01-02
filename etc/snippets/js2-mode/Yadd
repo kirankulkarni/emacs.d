@@ -1,0 +1,21 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: YUI add
+# key: Yadd
+# --
+
+/**
+ * This method (just) registers the module so that it can attached to a YUI instance
+ * via the use method. It's executed at YUI().use(...) phase.
+ */
+YUI.add("qotd-${1:moduleName}", function(Y) {
+
+  /**
+   * Creates a namespace - Y.$1
+   * 
+   */
+  Y.namespace("$1");
+  Y.$1 = {
+    $0
+  };
+
+}, "0.0.1", {requires:[$2]});

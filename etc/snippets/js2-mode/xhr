@@ -1,0 +1,16 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: XHR Snippet
+# --
+Y.io ("/xhr/$0", {
+  data: Y.QueryString.stringify({
+    _csrf_token: qotd.csrf    
+  }),
+  method: "POST",
+  headers: {"Content-Type": "application/x-www-form-urlencoded"},
+  on: {
+    success: function (id, result) {
+      var response = Y.JSON.parse(result.responseText);
+      
+    }
+  }
+});

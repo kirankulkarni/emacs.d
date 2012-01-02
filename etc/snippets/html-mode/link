@@ -1,0 +1,4 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: Link Tag
+# --
+<link href="${link}" media="screen, projection" rel="stylesheet" type="text/css" />$0

@@ -1,0 +1,12 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: YUI Module
+# --
+/**
+ * ${description}
+ * @author Prajwalit Bhopale <prajwalit@infinitelybeta.com>
+ * @created ${date}
+ * @module ${name}
+ * @requires ${requires}
+ */
+
+$0

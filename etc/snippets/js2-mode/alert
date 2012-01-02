@@ -1,0 +1,8 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: alert
+# --
+Y.use ("qotd-alertBox", function () {
+  Y.alertBox.show ({
+    alertMsg: ""
+  }, true);
+});

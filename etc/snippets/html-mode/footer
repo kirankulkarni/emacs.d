@@ -1,0 +1,8 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: scripts_footer
+# --
+{% block scripts_footer %}
+{{ super() }}
+$0
+{% endblock scripts_footer %}
+

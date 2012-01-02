@@ -1,0 +1,10 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: doc
+# --
+
+/**
+ * $1
+ *
+ * @method ${2:name}
+ * @param ${3:name} {${4:type}} ${5:description}
+ */$0

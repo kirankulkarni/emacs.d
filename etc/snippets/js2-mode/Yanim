@@ -1,0 +1,11 @@
+# contributor: Prajwalit <contact@prajwalit.com>
+# name: name
+# --
+var anim = new Y.Anim({
+  node: element,
+  to: {height: "0px"},
+  easing: Y.Easing.easeOut,
+  duration: 0.5,
+  on: {end: function (e) {anim.destroy ();} }
+});
+anim.run();
