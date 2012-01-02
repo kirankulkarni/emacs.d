@@ -69,5 +69,8 @@
 ;;; Octave-mode
 (require 'octave-mode-config)
 
+;;; JS2 mode config
+(require 'js-mode-config)
+
 ;; end of my customizations
 (provide 'kk-customizations)
