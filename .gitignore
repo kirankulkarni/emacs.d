@@ -7,3 +7,5 @@ tramp
 backups/
 eshell
 session.*
+*.pyc
+
