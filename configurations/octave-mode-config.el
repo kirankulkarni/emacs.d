@@ -11,4 +11,6 @@
                 (font-lock-mode 1))))
 
 
+(setq octave-comment-char 37)
+(setq octave-comment-start "% ")
 (provide 'octave-mode-config)
