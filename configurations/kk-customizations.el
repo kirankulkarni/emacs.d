@@ -3,7 +3,8 @@
 ;; Don't clutter up directories with files~
 ;; copied from Vedang
 (setq backup-directory-alist `(("." . ,(expand-file-name
-                                        (concat dotfiles-dir "backups")))))
+                                        (concat dotfiles-dir "backups"))))
+      require-final-newline t)
 ;; Paredit
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code."
