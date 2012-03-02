@@ -70,16 +70,19 @@
 ;; (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 
+;; ---------------
+;; TAGS
+;; ---------------
 
-;; Tags
+;; Tags List
 (setq org-tag-alist '((:startgroup . nil)
-		      ("@work" . ?w)
-		      ("@personal" . ?p)
-		      (:endgroup . nil)
-		      (:startgroup . nil)
-		      ("HighPri" . ?h)
-		      ("LowPri" . ?l)
-		      (:endgroup)))
+                      ("work" . ?w)
+                      ("personal" . ?p)
+                      (:endgroup . nil)))
+
+;;; If you find that most of the time you need only a single key press to
+;;; modify your list of tags: uncomment the following command
+;; (setq org-fast-tag-selection-single-key t)
 
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
