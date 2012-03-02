@@ -31,18 +31,24 @@
 ;; ! insert timestamp
 ;; @ Insert a note
 ;; / seperates entering action and leaving action of a state
-(setq org-todo-keywords (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)"))))
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)"))))
 
 ;; Colorize your keywords
 (setq org-todo-keyword-faces
       (quote (("TODO"      :foreground "red"          :weight bold)
-	      ("ACTIVE"    :foreground "orange"       :weight bold)
-	      ("WAITING"   :foreground "yellow"       :weight bold)
-	      ("COMMITTED" :foreground "lightblue"    :weight bold)
-	      ("VERIFIED"  :foreground "forest green" :weight bold)
-	      ("DONE"  :foreground "forest green" :weight bold)
+              ("ACTIVE"    :foreground "orange"       :weight bold)
+              ("WAITING"   :foreground "yellow"       :weight bold)
+              ("COMMITTED" :foreground "lightblue"    :weight bold)
+              ("VERIFIED"  :foreground "forest green" :weight bold)
+              ("DONE"      :foreground "forest green" :weight bold)
               ("JUNKED"    :foreground "lightgreen"   :weight bold))))
 
+;;; Enforcing the todo dependencies so that parent can not be marked as done
+;;; until children are done
+;;; for complex dependencies checkout org-depend.el
+(setq org-enforce-todo-dependencies t)
+(set org-enforce-todo-checkbox-dependencies t)
 
 ;; Align all tables at startup
 (setq org-startup-align-all-tables t)
@@ -53,6 +59,16 @@
 ;; (setq org-highest-priority)
 ;; (setq org-lowest-priority)
 ;; (setq org-default-priority)
+
+;; If you would like a TODO entry to automatically change to DONE when all children
+;; are done, you can use the following setup:
+;; (defun org-summary-todo (n-done n-not-done)
+;;   "Switch entry to DONE when all subentries are done, to TODO otherwise."
+;;   (let (org-log-done org-log-states)
+;;                                         ; turn off logging
+;;     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+;; (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
 
 
 ;; Tags
