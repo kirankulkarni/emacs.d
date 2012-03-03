@@ -1,3 +1,10 @@
+
+;;; Setting up Org default-notes-file 
+(setq org-directory "~/.org-files"
+      org-default-notes-file (concat org-directory "/captures.org")
+      org-completion-use-ido t)
+
+
  ;; Copied from Org-mode manual
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
@@ -113,6 +120,20 @@
       org-clock-out-when-done t
       org-clock-idle-time 15)
 
+
+;; ----------------------
+;; Capture-Refile-Archive
+;; ----------------------
+(setq org-capture-templates
+      '(("t" "todo" entry
+         (file+headline (concat org-directory "/captures.org") "Tasks")
+         "* TODO %?\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+        ("j" "journal" entry
+         (file+datetree "~/.org-files/journal.org") ; don't know why but (concat org-directory "/journal.org") is not wrking
+         "* %? :JOURNAL: \n%U\n%a\n   %i")
+        ("n" "note" entry
+         (file+headline (concat org-directory "/captures.org") "Notes")
+         "* %? :NOTE: \n%U\n%a\n   %i")))
 
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
