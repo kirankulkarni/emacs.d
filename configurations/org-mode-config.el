@@ -47,8 +47,8 @@
 ;;; Enforcing the todo dependencies so that parent can not be marked as done
 ;;; until children are done
 ;;; for complex dependencies checkout org-depend.el
-(setq org-enforce-todo-dependencies t)
-(set org-enforce-todo-checkbox-dependencies t)
+(setq org-enforce-todo-dependencies t
+      org-enforce-todo-checkbox-dependencies t)
 
 ;; Align all tables at startup
 (setq org-startup-align-all-tables t)
@@ -93,7 +93,7 @@
       (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 7:00 8:00 0:00")
               ("STYLE_ALL" . "habit")))
       org-columns-default-format
-      "%80ITEM(Task) %Effort(Effort){:} %CLOCKSUM")
+      "%80ITEM(Task) %10Effort(Effort){:} %20CLOCKSUM")
 
 
 ;; Calc package is needed for making spreadsheets
