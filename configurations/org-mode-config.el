@@ -96,6 +96,24 @@
       "%80ITEM(Task) %10Effort(Effort){:} %20CLOCKSUM")
 
 
+;; ---------------
+;; CLOCKING
+;; ---------------
+;;; Resolution of idle-time
+;;; k - to keep all (choosing how many minute to keep)
+;;; K - to keep all and clock-out
+;;; s - discard all of the idle time
+;;; S - discard all of the idle time and clock-out
+;;; C - Cancel the clock all-together
+
+(org-clock-persistence-insinuate)
+(setq org-clock-persist 'history
+      org-drawers (quote ("PROPERTIES" "LOGBOOK" "CLOCK"))
+      org-clock-into-drawer "CLOCK"
+      org-clock-out-when-done t
+      org-clock-idle-time 15)
+
+
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
 
