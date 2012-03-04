@@ -1,8 +1,11 @@
 
 ;;; Setting up Org default-notes-file 
 (setq org-directory "~/.org-files"
+      org-archive-directory (concat org-directory "/archived")
+      org-archive-location (concat org-archive-directory "/%s_archive::")
       org-default-notes-file (concat org-directory "/captures.org")
-      org-completion-use-ido t)
+      org-completion-use-ido t
+      org-agenda-files (list org-directory))
 
 
  ;; Copied from Org-mode manual
@@ -134,6 +137,13 @@
         ("n" "note" entry
          (file+headline (concat org-directory "/captures.org") "Notes")
          "* %? :NOTE: \n%U\n%a\n   %i")))
+
+(setq org-refile-targets (quote ((org-agenda-files :maxlevel . 2)
+                                 (nil :maxlevel . 2)))
+      org-refile-use-outline-path 'file
+      ;; Targets start with the file name - allows creating level 1 tasks
+      org-outline-path-complete-in-steps nil
+      org-refile-allow-creating-parent-nodes 'confirm)
 
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
