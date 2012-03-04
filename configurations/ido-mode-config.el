@@ -2,7 +2,7 @@
 
 ;; Setting ido 
 (setq 
-  ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
+  ido-save-directory-list-file (concat session-files-dir "/cache/ido.last")
   ido-case-fold  t
   ido-enable-last-directory-history t
   ido-max-work-directory-list 30
