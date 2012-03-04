@@ -3,8 +3,14 @@
 ;; Don't clutter up directories with files~
 ;; copied from Vedang
 (setq backup-directory-alist `(("." . ,(expand-file-name
-                                        (concat dotfiles-dir "backups"))))
-      require-final-newline t)
+                                        (concat session-files-dir "backups"))))
+      require-final-newline t
+      save-place-file (concat session-files-dir "places")
+      bookmark-default-file (concat session-files-dir "bookmarks.bmk")
+      auto-save-list-file-prefix
+      (concat session-files-dir "auto-save-list/.auto-saves-")
+      auto-save-file-name-transforms
+      `((".*" ,(concat session-files-dir "auto-save-list/") t)))
 ;; Paredit
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code."

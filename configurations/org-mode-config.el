@@ -121,7 +121,8 @@
       org-drawers (quote ("PROPERTIES" "LOGBOOK" "CLOCK"))
       org-clock-into-drawer "CLOCK"
       org-clock-out-when-done t
-      org-clock-idle-time 15)
+      org-clock-idle-time 15
+      org-clock-persist-file (concat session-files-dir "org-clock-save"))
 
 
 ;; ----------------------

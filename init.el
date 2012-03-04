@@ -41,6 +41,7 @@
 ;;My files
 (add-to-list 'load-path (concat dotfiles-dir "/plugins"))
 (add-to-list 'load-path (concat dotfiles-dir "/configurations"))
+(setq session-files-dir (concat dotfiles-dir "session-files/"))
 
 ;; Common libraries
 (require 'uniquify)
