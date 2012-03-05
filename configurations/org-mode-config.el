@@ -20,13 +20,6 @@
 ;; (global-set-key "\C-c L" 'org-insert-link-global)
 ;; (global-set-key "\C-c o" 'org-open-at-point-global)
 
-;; Crating custom sparse trees
-;; use C-c a <key> 
-;; following "FIXME" is just an example.
-;; customizations will be added later
-(setq org-agenda-custom-commands
-'(("f" occur-tree "FIXME")))
-
 ;; Modifying the Bullets while demoting
 (setq org-list-demote-modify-bullet
       '(("+" . "-") ("-" . "+") ("*" . "+")))
