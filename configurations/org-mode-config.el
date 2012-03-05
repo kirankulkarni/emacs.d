@@ -142,6 +142,51 @@
       org-outline-path-complete-in-steps nil
       org-refile-allow-creating-parent-nodes 'confirm)
 
+;; ----------------------
+;; Agenda
+;; ----------------------
+;; Undefine C-c [ and C-c ] since this breaks my org-agenda files
+;; when directories are included
+;; It expands the files in the directories individually
+(add-hook 'org-mode-hook (lambda ()
+                           (turn-on-font-lock)
+                           (org-defkey org-mode-map "\C-c[" 'undefined)
+                           (org-defkey org-mode-map "\C-c]" 'undefined)
+                           (flyspell-mode 1)))
+
+;;; Always highlight the current agenda line
+(add-hook 'org-agenda-mode-hook '(lambda ()
+                                   (hl-line-mode 1)))
+
+
+(setq org-stuck-projects                ;Not working consult someone
+      '("TODO={.+}/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:"))
+
+;; setup for Reminder
+;; Erase all reminders and rebuild reminders for today from the agenda
+(defadvice org-agenda-to-appt (before wickedcool activate)
+  "Clear the appt-time-msg-list."
+  (setq appt-time-msg-list nil))
+
+(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+
+(appt-activate t)
+
+;; If we leave Emacs running overnight -
+;; reset the appointments one minute after midnight
+(run-at-time "24:01" nil 'org-agenda-to-appt)
+
+
+;;; Unused variables
+;;; org-agenda-todo-ignore-scheduled
+;;; org-agenda-todo-ignore-deadlines
+;;; org-agenda-todo-ignore-timestamp
+;;; org-agenda-todo-ignore-with-date
+;;; org-agenda-todo-list-sublevels
+
+(setq org-agenda-span 1)
+
+
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
 
