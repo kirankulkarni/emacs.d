@@ -130,10 +130,10 @@
          "* TODO %?\n%U\n%a\n  %i" :clock-in t :clock-resume t)
         ("j" "journal" entry
          (file+datetree "~/.org-files/journal.org") ; don't know why but (concat org-directory "/journal.org") is not wrking
-         "* %? :JOURNAL: \n%U\n%a\n   %i")
+         "* %? :JOURNAL: \n%U\n   %i" :clock-in t :clock-resume t)
         ("n" "note" entry
          (file+headline (concat org-directory "/captures.org") "Notes")
-         "* %? :NOTE: \n%U\n%a\n   %i")))
+         "* %? :NOTE: \n%U\n%a\n   %i" :clock-in t :clock-resume t)))
 
 (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 2)
                                  (nil :maxlevel . 2)))
