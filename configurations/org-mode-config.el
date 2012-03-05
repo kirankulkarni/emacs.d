@@ -157,10 +157,21 @@
 (add-hook 'org-agenda-mode-hook '(lambda ()
                                    (hl-line-mode 1)))
 
+(setq org-stuck-projects
+      '("TODO={.+}/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:")
+      org-agenda-span 1
+      org-agenda-sorting-strategy
+      '((agenda habit-down time-up priority-down effort-up category-keep)
+       (todo todo-state-up priority-down category-keep)
+       (tags priority-down category-keep)
+       (search category-keep))
+      org-agenda-use-time-grid t
+      org-agenda-time-grid
+      '(nil "----------------"
+            (800 1000 1200 1400 1600 1800 2000)))
 
-(setq org-stuck-projects                ;Not working consult someone
-      '("TODO={.+}/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:"))
 
+;; setup for Reminder
 ;; setup for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
 (defadvice org-agenda-to-appt (before wickedcool activate)
@@ -182,9 +193,6 @@
 ;;; org-agenda-todo-ignore-timestamp
 ;;; org-agenda-todo-ignore-with-date
 ;;; org-agenda-todo-list-sublevels
-
-(setq org-agenda-span 1)
-
 
 ;; Calc package is needed for making spreadsheets
 (require 'calc)
