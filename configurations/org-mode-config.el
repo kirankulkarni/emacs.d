@@ -36,7 +36,9 @@
 ;; @ Insert a note
 ;; / seperates entering action and leaving action of a state
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)"))))
+      (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)")
+              (sequence "PROJECT(p)" "LATER(l@/!)" "BUG(b!/@)" "FEATURE(f!/!)"
+                        "MAINT(m!/!)" "|" "SOMEDAY(s)" "CANCELLED(n@/!)"))))
 
 ;; Colorize your keywords
 (setq org-todo-keyword-faces
