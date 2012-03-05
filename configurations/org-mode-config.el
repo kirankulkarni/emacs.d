@@ -5,7 +5,8 @@
       org-archive-location (concat org-archive-directory "/%s_archive::")
       org-default-notes-file (concat org-directory "/captures.org")
       org-completion-use-ido t
-      org-agenda-files (list org-directory))
+      org-agenda-files (list org-directory
+                             org-archive-directory))
 
 
  ;; Copied from Org-mode manual
