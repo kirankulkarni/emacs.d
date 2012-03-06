@@ -158,8 +158,9 @@
                                    (hl-line-mode 1)))
 
 (setq org-stuck-projects
-      '("TODO={.+}/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:")
+      '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:\\")
       org-agenda-span 1
+      org-agenda-start-on-weekday nil
       org-agenda-sorting-strategy
       '((agenda habit-down time-up priority-down effort-up category-keep)
        (todo todo-state-up priority-down category-keep)
@@ -168,7 +169,8 @@
       org-agenda-use-time-grid t
       org-agenda-time-grid
       '(nil "----------------"
-            (800 1000 1200 1400 1600 1800 2000)))
+            (800 1000 1200 1400 1600 1800 2000))
+      org-agenda-log-mode-items '(clock))
 
 
 ;; setup for Reminder
