@@ -86,6 +86,9 @@
 (setq org-tag-alist '((:startgroup . nil)
                       ("work" . ?w)
                       ("personal" . ?p)
+                      (:endgroup . nil)
+                      (:startgroup . nil)
+                      ("next-release" . ?n)
                       (:endgroup . nil)))
 
 ;;; If you find that most of the time you need only a single key press to
