@@ -30,7 +30,9 @@
 ;; Org Fast tag selection
 (setq org-use-fast-todo-selection t)
 ;; Org log note or time based on keyword action
-(setq org-log-into-drawer t)
+(setq org-log-into-drawer t
+      org-log-reschedule 'note
+      org-log-redeadline 'note)
 ;; ! insert timestamp
 ;; @ Insert a note
 ;; / seperates entering action and leaving action of a state
