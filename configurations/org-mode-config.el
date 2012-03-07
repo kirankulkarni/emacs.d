@@ -188,7 +188,7 @@ Skips capture tasks and tasks with subtasks"
                                    (hl-line-mode 1)))
 
 (setq org-stuck-projects
-      '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:\\")
+      '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:\\|NOTSTUCK:")
       org-agenda-span 1
       org-agenda-start-on-weekday nil
       org-agenda-sorting-strategy
