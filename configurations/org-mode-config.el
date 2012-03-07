@@ -63,9 +63,9 @@
 ;; Read more about TODO habits might be useful for Agenda views later
 
 ;; ;; Priorities Will be needed for Agenda Views
-(setq org-highest-priority "A"
-      org-lowest-priority "E"
-      org-default-priority "C"
+(setq org-highest-priority ?A
+      org-lowest-priority ?E
+      org-default-priority ?C
       org-use-property-inheritance t)
 
 ;; If you would like a TODO entry to automatically change to DONE when all children
