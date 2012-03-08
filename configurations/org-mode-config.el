@@ -203,6 +203,14 @@ Skips capture tasks and tasks with subtasks"
       org-agenda-log-mode-items '(clock))
 
 
+(setq org-agenda-custom-commands
+      (quote (("a" "Agenda"
+               ((agenda "" nil)
+                (todo "ACTIVE")
+                (stuck "")
+               nil)))))
+
+
 ;; setup for Reminder
 ;; setup for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
