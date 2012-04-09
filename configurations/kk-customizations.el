@@ -19,7 +19,11 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-;; Use 'Y' or 'N' to answer Yes/No 
+;;; hooks
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'time-stamp)
+
+;; Use 'Y' or 'N' to answer Yes/No
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; ido mode configuration
 (require 'ido-mode-config)
@@ -81,6 +85,9 @@
 
 ;; util functions
 (require 'util-functions)
+
+(require 'template)
+(template-initialize)
 
 ;; end of my customizations
 (provide 'kk-customizations)
