@@ -89,5 +89,7 @@
 (require 'template)
 (template-initialize)
 
+(require 'mediawiki-config)
+
 ;; end of my customizations
 (provide 'kk-customizations)
