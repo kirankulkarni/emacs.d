@@ -12,15 +12,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t))
+ '(display-time-mode nil)
+ '(inhibit-startup-screen t)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
 
-(show-paren-mode 1) ;;Show paren matching 
+(show-paren-mode 1) ;;Show paren matching
 
 ;;; Taken from Starter-kit
 ;;Emacs load path
@@ -46,7 +49,7 @@
 ;; Common libraries
 (require 'uniquify)
 
-;;; ELPA 
+;;; ELPA
 (require 'package)
 (package-initialize)
 
@@ -64,10 +67,10 @@
 (require 'kk-customizations)
 
 ;; No EASY KEYS
-(defvar no-easy-keys-minor-mode-map (make-keymap) 
+(defvar no-easy-keys-minor-mode-map (make-keymap)
   "no-easy-keys-minor-mode keymap.")
 (let ((f (lambda (m)
-           `(lambda () (interactive) 
+           `(lambda () (interactive)
               (message (concat "No! use " ,m " instead."))))))
   (dolist (l '(("<left>" . "C-b") ("<right>" . "C-f") ("<up>" . "C-p")
                ("<down>" . "C-n")
@@ -77,7 +80,7 @@
                ("<M-down>" . "M-}")
                ("<delete>" . "C-d") ("<C-delete>" . "M-d")
                ("<M-delete>" . "M-d") ("<next>" . "C-v") ("<C-next>" . "M-x <")
-               ("<prior>" . "M-v") ("<C-prior>" . "M-x >") 
+               ("<prior>" . "M-v") ("<C-prior>" . "M-x >")
                ("<home>" . "C-a") ("<C-home>" . "M->")
                ("<C-home>" . "M-<") ("<end>" . "C-e") ("<C-end>" . "M->")))
     (define-key no-easy-keys-minor-mode-map
