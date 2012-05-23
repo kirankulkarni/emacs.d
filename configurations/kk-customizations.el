@@ -23,7 +23,12 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'time-stamp)
 
-;; Use 'Y' or 'N' to answer Yes/No
+(add-hook 'ibuffer-hook
+    (lambda ()
+      (ibuffer-vc-set-filter-groups-by-vc-root)
+      (ibuffer-do-sort-by-alphabetic)))
+
+;; use 'Y' or 'N' to answer Yes/No
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; ido mode configuration
 (require 'ido-mode-config)
