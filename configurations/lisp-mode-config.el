@@ -50,11 +50,5 @@ context-help to false"
    (t ad-do-it)))
 
 (global-set-key (kbd "C-c h") 'rgr/toggle-context-help)
-
-(add-hook 'slime-mode-hook 'turn-on-paredit)
-(add-hook 'lisp-mode-hook 'turn-on-paredit)
-(add-hook 'slime-repl-mode-hook 'turn-on-paredit)
-(add-hook 'slime-connected-hook 'turn-on-paredit)
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
-
 (provide 'lisp-mode-config)
