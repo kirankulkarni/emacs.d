@@ -4,7 +4,7 @@
   (font-lock-add-keywords
    nil `(("(\\(fn\\)[\[[:space:]]"
           (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    "λ")
+                                    "ƒ")
                     nil))))))
 
 
@@ -12,7 +12,7 @@
   (font-lock-add-keywords
    nil `(("\\(#\\)("
           (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    "ƒ")
+                                    "λ")
                     nil))))))
 
 
@@ -84,6 +84,25 @@
 
 
 (add-hook 'slime-repl-mode-hook 'turn-on-clojure-font-lock-setup)
+
+
+(defun midje-test-for (namespace)
+  (let* ((namespace (clojure-underscores-for-hyphens namespace))
+         (segments (split-string namespace "\\."))
+         (test-segments (append (list "test") segments)))
+    (mapconcat 'identity test-segments "/")))
+
+
+
+(defun midje-jump-to-test ()
+  "Jump from implementation file to test."
+  (interactive)
+  (find-file (format "%s/%s_test.clj"
+                     (file-name-as-directory
+                      (locate-dominating-file buffer-file-name "src/"))
+                     (midje-test-for (clojure-find-ns)))))
+
+(define-key clojure-mode-map (kbd "C-c t") 'midje-jump-to-test)
 
 
 
