@@ -1,5 +1,5 @@
 
-;;; Setting up Org default-notes-file 
+;;; Setting up Org default-notes-file
 (setq org-directory "~/.org-files"
       org-archive-directory (concat org-directory "/archived")
       org-archive-location (concat org-archive-directory "/%s_archive::")
@@ -14,7 +14,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;; Suggestion: Also include global key bindings to create 
+;; Suggestion: Also include global key bindings to create
 ;; Inserting org-link in any emacs buffer and and open them
 ;; (global-set-key "\C-c L" 'org-insert-link-global)
 ;; (global-set-key "\C-c o" 'org-open-at-point-global)
@@ -37,7 +37,7 @@
 ;; @ Insert a note
 ;; / seperates entering action and leaving action of a state
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t!/!)" "ACTIVE(a@/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)")
+      (quote ((sequence "TODO(t!/!)" "ACTIVE(a!/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)")
               (sequence "PROJECT(p)" "LATER(l@/!)" "BUG(b!/@)" "FEATURE(f!/!)"
                         "MAINT(m!/!)" "|" "SOMEDAY(s)" "CANCELLED(n@/!)"))))
 
@@ -188,7 +188,7 @@ Skips capture tasks and tasks with subtasks"
                                    (hl-line-mode 1)))
 
 (setq org-stuck-projects
-      '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED" nil nil "SCHEDULED:\\|DEADLINE:\\|NOTSTUCK:")
+      '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED-SOMEDAY" nil nil "SCHEDULED:\\|DEADLINE:\\|NOTSTUCK:")
       org-agenda-span 1
       org-agenda-start-on-weekday nil
       org-agenda-sorting-strategy
@@ -204,11 +204,18 @@ Skips capture tasks and tasks with subtasks"
 
 
 (setq org-agenda-custom-commands
-      (quote (("a" "Agenda"
-               ((agenda "" nil)
-                (todo "ACTIVE")
-                (stuck "")
-               nil)))))
+      '(("a" "Agenda"
+        ((agenda "" nil)
+         (todo "ACTIVE")
+         (tags-todo "work+current/!-DONE-ACTIVE-VERIFIED-SOMEDAY-PROJECT"
+                    ((org-agenda-overriding-header
+                      "Current Project Tasks")
+                     (org-agenda-todo-ignore-scheduled t)
+                     (org-agenda-todo-ignore-deadlines t)
+                     (org-tags-match-list-sublevels t)
+                     (org-agenda-sorting-strategy
+                      '(effort-up category-keep))))
+         nil))))
 
 
 ;; setup for Reminder
