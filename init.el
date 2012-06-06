@@ -91,3 +91,8 @@
 
   'no-easy-keys-minor-mode-map :global t)
 (no-easy-keys-minor-mode 1)
+
+;;; Start emacs server if it is not running
+(load "server")
+(unless (server-running-p)
+  (server-start))
