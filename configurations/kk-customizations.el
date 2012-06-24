@@ -28,6 +28,8 @@
       (ibuffer-vc-set-filter-groups-by-vc-root)
       (ibuffer-do-sort-by-alphabetic)))
 
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ;; use 'Y' or 'N' to answer Yes/No
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; ido mode configuration
