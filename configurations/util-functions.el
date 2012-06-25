@@ -65,5 +65,14 @@
 
 (global-set-key (kbd "C-x M-s") 'transpose-windows)
 
-;;End of the 
+
+(defun sudo-edit (&optional arg)
+  "Edit as root"
+  (interactive "p")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+
+;;End of the
 (provide 'util-functions)
