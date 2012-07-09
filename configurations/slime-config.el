@@ -5,10 +5,6 @@
   (slime-mode t))
 
 
-(defun turn-on-paredit ()
-  (paredit-mode t))
-
-
 (defun turn-on-slime-paredit ()
   "Redefining paredit-space-for-delimiter function so that paredit behaves
 well in slime."

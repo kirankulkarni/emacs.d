@@ -35,6 +35,9 @@
 ;; ido mode configuration
 (require 'ido-mode-config)
 
+;; util functions
+(require 'util-functions)
+
 ;; lisp-mode configuration
 (require 'lisp-mode-config)
 
@@ -54,7 +57,7 @@
 (require 'auto-complete-mode-config)
 
 ;; Python customizations
-(require 'python-mode-config)
+;; (require 'python-mode-config)
 
 ;; Flymake
 (require 'flymake-config)
@@ -70,7 +73,7 @@
 (require 'latex-mode-config)
 
 ;; Erlang mode
-(require 'erlang-mode-config)
+;; (require 'erlang-mode-config)
 
 ;; ERC
 (require 'erc-mode-config)
@@ -92,9 +95,6 @@
 
 ;;; Yasnippets
 (require 'yasnippet-config)
-
-;; util functions
-(require 'util-functions)
 
 (require 'template)
 (template-initialize)
