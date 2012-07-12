@@ -46,6 +46,9 @@
 (add-to-list 'load-path (concat dotfiles-dir "/configurations"))
 (setq session-files-dir (concat dotfiles-dir "session-files/"))
 
+;;; Add /usr/local/bin in PATH
+(add-to-list 'exec-path "/usr/local/bin")
+
 ;; Common libraries
 (require 'uniquify)
 
