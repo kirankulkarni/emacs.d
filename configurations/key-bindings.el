@@ -1,6 +1,9 @@
 ;; All the key-bindings that I need to use
 ;; Copied from starter-kit
 
+;;; For mac use mac-command-modifier to map command to meta
+(setq mac-command-modifier 'meta)
+
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
