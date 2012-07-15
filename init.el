@@ -62,9 +62,7 @@
 
 
 ;;; color-theme
-(require 'color-theme)
-(require 'color-theme-billw)
-(color-theme-billw)
+(load-theme 'wombat)
 
 ;; Require my customizations
 (require 'kk-customizations)
