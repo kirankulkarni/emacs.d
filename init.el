@@ -62,7 +62,8 @@
 
 
 ;;; color-theme
-(load-theme 'wombat)
+(add-to-list 'custom-theme-load-path (concat dotfiles-dir "/plugins/themes"))
+(load-theme 'billw t)
 
 ;; Require my customizations
 (require 'kk-customizations)
