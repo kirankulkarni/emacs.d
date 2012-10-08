@@ -29,6 +29,7 @@
       (ibuffer-do-sort-by-alphabetic)))
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; use 'Y' or 'N' to answer Yes/No
 (defalias 'yes-or-no-p 'y-or-n-p)
