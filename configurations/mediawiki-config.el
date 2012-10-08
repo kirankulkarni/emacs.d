@@ -1,8 +1,8 @@
 (require 'mediawiki)
 
 (add-to-list 'mediawiki-site-alist '("Helpshift"
-                                     "http://wiki.qotdinc.com/"
-                                     ""
+                                     "http://wiki.helpshift.com/"
+                                     "kiran"
                                      ""
                                      "Main Page"))
 
