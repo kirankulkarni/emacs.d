@@ -84,12 +84,12 @@
 
 ;; Clojure
 (require 'clojure-mode-config)
-
 ;;; Locale setting
 (require 'mylocale)
 
-;;; Octave-mode
-(require 'octave-mode-config)
+;; ;;; Commented because currently I need to use objective-c mode for .m
+;; ;;; Octave-mode
+;; (require 'octave-mode-config)
 
 ;;; JS2 mode config
 (require 'js-mode-config)
