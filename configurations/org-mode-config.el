@@ -108,6 +108,13 @@
 
 
 ;; ---------------
+;; Checkboxes
+;; ---------------
+
+;;; I do not like my checkboxes blcoking state changes in TODO items
+(setq org-enforce-todo-checkbox-dependencies nil)
+
+;; ---------------
 ;; CLOCKING
 ;; ---------------
 ;;; Resolution of idle-time
