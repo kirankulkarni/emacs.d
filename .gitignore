@@ -5,7 +5,9 @@
 *.dat
 tramp
 backups/
+snippets
 eshell
 session.*
 *.pyc
 session-files/*
+url/
