@@ -1,4 +1,5 @@
 (require 'clojure-mode)
+(require 'clojurescript-mode)
 
 (defun pretty-fns ()
   (font-lock-add-keywords
