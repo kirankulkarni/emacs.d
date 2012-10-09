@@ -7,8 +7,7 @@
 ;; From Vedang's configuration
 ;; start completion only after typing at least 4 characters
 ;; Show auto-complete menu 0.8 second later
-(setq ac-auto-start nil
-      ac-auto-show-menu 0.8
+(setq ac-auto-show-menu 0.8
       ac-use-menu-map t)
 
 ;;; If `complete', TAB first tries to indent the current line, and if the line
@@ -21,9 +20,8 @@
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 
-(dolist (mode '(magit-log-edit-mode org-mode text-mode))
+(dolist (mode '(magit-log-edit-mode org-mode text-mode objc-mode))
   (add-to-list 'ac-modes mode))
-
 
 
 (ac-set-trigger-key "TAB")
