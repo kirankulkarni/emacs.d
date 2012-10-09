@@ -57,8 +57,12 @@
 (eval-after-load 'paredit
   '(define-key paredit-mode-map (kbd "C-o") 'paredit-open-round))
 
+;;; Because C-M-t is taken by gnome-terminal in ubuntu, assigning C-S-t to it
+;; (global-set-key (kbd "C-S-t") 'transpose-sexps)
+
+(global-set-key (kbd "M-,") 'pop-tag-mark)
+(global-set-key (kbd "M-*") 'tags-loop-continue)
+
+
 ;; End of key-bindings
 (provide 'key-bindings)
-
-;;; Because C-M-t is taken by gnome-terminal in ubuntu, assigning C-S-t to it
-(global-set-key (kbd "C-S-t") 'transpose-sexps)

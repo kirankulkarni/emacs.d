@@ -31,6 +31,13 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
+;;; W3m
+(setq browse-url-browser-function 'w3m-browse-url)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+;; optional keyboard short-cut
+(global-set-key "\C-xm" 'browse-url-at-point)
+
+
 ;; use 'Y' or 'N' to answer Yes/No
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; ido mode configuration
@@ -101,6 +108,9 @@
 (template-initialize)
 
 (require 'mediawiki-config)
+
+;;; Objective C mode config
+(require 'objc-mode-config)
 
 ;; end of my customizations
 (provide 'kk-customizations)
