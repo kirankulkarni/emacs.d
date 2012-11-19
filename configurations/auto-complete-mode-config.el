@@ -20,7 +20,10 @@
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 
-(dolist (mode '(magit-log-edit-mode org-mode text-mode objc-mode))
+(dolist (mode '(magit-log-edit-mode
+                org-mode
+                text-mode
+                objc-mode))
   (add-to-list 'ac-modes mode))
 
 
