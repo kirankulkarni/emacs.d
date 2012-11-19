@@ -41,7 +41,7 @@
 
 (defun objc-mode-customizations ()
   (turn-on-paredit)
-  (define-key objc-mode-map (kbd "C-x p") 'objc-headline)
+  (define-key objc-mode-map (kbd "C-c p") 'objc-headline)
   (define-key objc-mode-map (kbd "C-c t") 'objc-jump-between-header-source))
 
 (add-hook 'objc-mode-hook 'objc-mode-customizations)
