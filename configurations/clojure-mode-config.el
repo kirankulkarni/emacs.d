@@ -132,6 +132,7 @@
 ;;; Set eldoc to use nrepl
 (add-hook 'nrepl-interaction-mode-hook
           'nrepl-turn-on-eldoc-mode)
+(setq nrepl-lein-command "lein2")
 
 ;;; Configure autocomplete for nrepl
 (require 'ac-nrepl)
