@@ -32,10 +32,10 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;;; W3m
-(setq browse-url-browser-function 'w3m-browse-url)
-(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-;; optional keyboard short-cut
-(global-set-key "\C-xm" 'browse-url-at-point)
+;; (setq browse-url-browser-function 'w3m-browse-url)
+;; (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+;; ;; optional keyboard short-cut
+;; (global-set-key "\C-xm" 'browse-url-at-point)
 
 
 ;; use 'Y' or 'N' to answer Yes/No
@@ -81,7 +81,7 @@
 (require 'latex-mode-config)
 
 ;; Erlang mode
-;; (require 'erlang-mode-config)
+(require 'erlang-mode-config)
 
 ;; ERC
 (require 'erc-mode-config)
@@ -111,6 +111,10 @@
 
 ;;; Objective C mode config
 (require 'objc-mode-config)
+
+;;; MarkDown Mode
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 ;; end of my customizations
 (provide 'kk-customizations)

@@ -46,8 +46,8 @@
 
 (add-hook 'objc-mode-hook 'objc-mode-customizations)
 ;;; xcode document view setting
-(require 'xcode-document-viewer)
-(setq xcdoc:document-path "/Users/kiran/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiOS5_1.iOSLibrary.docset")
-(setq xcdoc:open-w3m-other-buffer t)
+;; (require 'xcode-document-viewer)
+;; (setq xcdoc:document-path "/Users/kiran/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiOS5_1.iOSLibrary.docset")
+;; (setq xcdoc:open-w3m-other-buffer t)
 
 (provide 'objc-mode-config)
