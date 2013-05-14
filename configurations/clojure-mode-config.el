@@ -148,4 +148,8 @@
 (add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
+(require 'util-functions)
+(add-hook 'nrepl-interaction-mode-hook 'turn-on-paredit)
+(add-hook 'nrepl-mode-hook 'turn-on-paredit)
+
 (provide 'clojure-mode-config)
