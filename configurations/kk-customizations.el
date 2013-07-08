@@ -66,6 +66,7 @@
 
 ;; Python customizations
 ;; (require 'python-mode-config)
+(elpy-enable)
 
 ;; Flymake
 (require 'flymake-config)
