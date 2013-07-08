@@ -3,16 +3,11 @@
 ;;; Code:
 
 
-;;;### (autoloads (ac-nrepl-setup ac-nrepl-clear-class-cache) "ac-nrepl"
-;;;;;;  "ac-nrepl.el" (20647 50813))
+;;;### (autoloads (ac-nrepl-popup-doc ac-nrepl-setup) "ac-nrepl"
+;;;;;;  "ac-nrepl.el" (20954 29423))
 ;;; Generated autoloads from ac-nrepl.el
 
-(autoload 'ac-nrepl-clear-class-cache "ac-nrepl" "\
-Clear the class cache to prevent stale results.
-
-\(fn)" nil nil)
-
-(add-hook 'nrepl-connected-hook 'ac-nrepl-refresh-class-cache)
+(add-hook 'nrepl-connected-hook 'ac-nrepl-refresh-class-cache t)
 
 (defface ac-nrepl-candidate-face '((t (:inherit ac-candidate-face))) "\
 Face for nrepl candidates." :group (quote auto-complete))
@@ -47,9 +42,14 @@ This affects only the current buffer.
 
 \(fn)" t nil)
 
+(autoload 'ac-nrepl-popup-doc "ac-nrepl" "\
+A popup alternative to `nrepl-doc'.
+
+\(fn)" t nil)
+
 ;;;***
 
-;;;### (autoloads nil nil ("ac-nrepl-pkg.el") (20647 50813 405186))
+;;;### (autoloads nil nil ("ac-nrepl-pkg.el") (20954 29423 729490))
 
 ;;;***
 

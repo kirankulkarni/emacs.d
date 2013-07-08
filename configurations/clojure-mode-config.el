@@ -84,7 +84,7 @@
   (clojure-font-lock-setup))
 
 
-(add-hook 'slime-repl-mode-hook 'turn-on-clojure-font-lock-setup)
+;; (add-hook 'slime-repl-mode-hook 'turn-on-clojure-font-lock-setup)
 
 
 (remove-hook 'clojure-mode-hook 'clojure-test-maybe-enable)
@@ -132,6 +132,7 @@
 ;;; Set eldoc to use nrepl
 (add-hook 'nrepl-interaction-mode-hook
           'nrepl-turn-on-eldoc-mode)
+(setq nrepl-popup-stacktraces-in-repl t)
 (setq nrepl-lein-command "lein2")
 
 ;;; Configure autocomplete for nrepl
