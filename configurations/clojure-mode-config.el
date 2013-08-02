@@ -134,6 +134,14 @@
           'nrepl-turn-on-eldoc-mode)
 (setq nrepl-popup-stacktraces-in-repl t)
 (setq nrepl-lein-command "lein2")
+(setq nrepl-history-file (concat session-files-dir "nrepl-history"))
+
+;;; Load clojre-mode indentation in nrepl-mode
+(eval-after-load "clojure-mode"
+  '(progn
+     (defun fix-nrepl-indentation ()
+       (setq-local lisp-indent-function 'clojure-indent-function))
+     (add-hook 'nrepl-mode-hook 'fix-nrepl-indentation)))
 
 ;;; Configure autocomplete for nrepl
 (require 'ac-nrepl)
