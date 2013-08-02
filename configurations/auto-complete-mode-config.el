@@ -1,6 +1,6 @@
 (require 'auto-complete-config)
 
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict")
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict")
 (setq ac-comphist-file (concat session-files-dir "ac-comphist.dat"))
 (ac-config-default)
 

@@ -130,6 +130,7 @@
 
 ;;; Configure nrepl
 ;;; Set eldoc to use nrepl
+(require 'nrepl)
 (add-hook 'nrepl-interaction-mode-hook
           'nrepl-turn-on-eldoc-mode)
 (setq nrepl-popup-stacktraces-in-repl t)
@@ -144,9 +145,11 @@
      (add-hook 'nrepl-mode-hook 'fix-nrepl-indentation)))
 
 ;;; Configure autocomplete for nrepl
-(require 'ac-nrepl)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(eval-after-load "nrepl"
+  '(progn
+     (require 'ac-nrepl)
+     (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+     (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)))
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
 
