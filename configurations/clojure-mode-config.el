@@ -142,26 +142,27 @@
   '(progn
      (defun fix-nrepl-indentation ()
        (setq-local lisp-indent-function 'clojure-indent-function))
-     (add-hook 'nrepl-mode-hook 'fix-nrepl-indentation)))
+     (add-hook 'nrepl-repl-mode-hook 'fix-nrepl-indentation)))
 
 ;;; Configure autocomplete for nrepl
 (eval-after-load "nrepl"
   '(progn
      (require 'ac-nrepl)
-     (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+     (add-hook 'nrepl-repl-mode-hook 'ac-nrepl-setup)
      (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)))
+
 (eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
+  '(add-to-list 'ac-modes 'nrepl-repl-mode))
 
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
-(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'nrepl-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 (require 'util-functions)
 (add-hook 'nrepl-interaction-mode-hook 'turn-on-paredit)
-(add-hook 'nrepl-mode-hook 'turn-on-paredit)
+(add-hook 'nrepl-repl-mode-hook 'turn-on-paredit)
 
 (provide 'clojure-mode-config)
