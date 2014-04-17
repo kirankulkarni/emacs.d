@@ -1,8 +1,8 @@
 ;;; elpy-refactor.el --- Refactoring mode for Elpy
 
-;; Copyright (C) 2013  Jorgen Schaefer <forcer@forcix.cx>
+;; Copyright (C) 2013  Jorgen Schaefer
 
-;; Author: Jorgen Schaefer <forcer@forcix.cx>
+;; Author: Jorgen Schaefer <contact@jorgenschaefer.de>
 ;; URL: https://github.com/jorgenschaefer/elpy
 
 ;; This program is free software; you can redistribute it and/or
@@ -264,17 +264,21 @@ The user can review the changes and confirm them with
   "Get a list of refactoring options from the Elpy RPC."
   (if (use-region-p)
       (elpy-rpc "get_refactor_options"
-                (elpy-project-root) (buffer-file-name)
-                (1- (region-beginning)) (1- (region-end)))
+                (list (elpy-project-root)
+                      (buffer-file-name)
+                      (1- (region-beginning))
+                      (1- (region-end))))
     (elpy-rpc "get_refactor_options"
-              (elpy-project-root) (buffer-file-name)
-              (1- (point)))))
+              (list (elpy-project-root)
+                    (buffer-file-name)
+                    (1- (point))))))
 
 (defun elpy-refactor-rpc-get-changes (method args)
   "Get a list of changes from the Elpy RPC after applying METHOD with ARGS."
   (elpy-rpc "refactor"
-            (elpy-project-root) (buffer-file-name)
-            method args))
+            (list (elpy-project-root)
+                  (buffer-file-name)
+                  method args)))
 
 (provide 'elpy-refactor)
 ;;; elpy-refactor.el ends here
