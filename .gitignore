@@ -11,3 +11,4 @@ session.*
 *.pyc
 session-files/*
 url/
+el-get/
