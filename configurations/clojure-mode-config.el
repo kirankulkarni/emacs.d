@@ -128,34 +128,6 @@
 
 (define-key clojure-mode-map (kbd "C-c t") 'midje-jump-between-tests-and-code)
 
-;;; Cider Config
-
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(setq nrepl-hide-special-buffers t
-      cider-repl-popup-stacktraces t
-      nrepl-buffer-name-separator "-"
-      nrepl-buffer-name-show-port t
-      cider-switch-to-repl-command 'cider-switch-to-current-repl-buffer
-      cider-repl-wrap-history t
-      cider-repl-history-size most-positive-fixnum
-      cider-repl-history-file (concat session-files-dir "/cider-history.txt"))
-
-;;; Cider ac-nrepl
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-repl-mode))
-
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
-(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
-(add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
-
-(require 'util-functions)
-(add-hook 'cider-mode-hook 'turn-on-paredit)
-(add-hook 'cider-repl-mode-hook 'turn-on-paredit)
 
 
 (provide 'clojure-mode-config)

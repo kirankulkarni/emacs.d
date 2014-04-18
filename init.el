@@ -66,6 +66,7 @@
 (add-to-list 'custom-theme-load-path (concat dotfiles-dir "/plugins/themes"))
 (load-theme 'billw t)
 
+(require 'init-el-get)
 ;; Require my customizations
 (require 'kk-customizations)
 
