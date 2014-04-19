@@ -1,10 +1,3 @@
-(require 'js2-mode)
-
-(defun turn-on-paredit ()
-  (paredit-mode t))
-
-(add-hook 'js2-mode-hook 'turn-on-paredit)
-
 (defun fix-tab-width-for-js2-mode ()
   (setq-default tab-width 2)
   (setq js2-basic-offset 2))
@@ -24,4 +17,4 @@
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-(provide 'js2-mode-config)
+(provide 'init-js2-mode)

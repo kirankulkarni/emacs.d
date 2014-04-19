@@ -28,6 +28,7 @@
                               elpy
                               flymake
                               flymake-cursor
+                              js2-mode
                               magit
                               markdown-mode
                               paredit

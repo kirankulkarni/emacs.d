@@ -67,11 +67,6 @@
 (require 'latex-mode-config)
 
 
-;; ERC
-(require 'erc-mode-config)
-
-;; HTML
-(require 'html-mode-config)
 
 ;;; Locale setting
 (require 'mylocale)
@@ -80,8 +75,6 @@
 ;; ;;; Octave-mode
 ;; (require 'octave-mode-config)
 
-;;; JS2 mode config
-(require 'js-mode-config)
 
 
 ;; end of my customizations

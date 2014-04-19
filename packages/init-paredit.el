@@ -1,6 +1,6 @@
 (defvar paredit-major-modes
   '(emacs-lisp-mode lisp-mode lisp-interaction-mode clojure-mode cider-repl-mode
-                    scheme-mode inferior-emacs-lisp-mode)
+                    scheme-mode inferior-emacs-lisp-mode js2-mode)
   "List of lispy modes that I use")
 
 (defun turn-on-paredit ()
