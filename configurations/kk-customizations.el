@@ -50,8 +50,6 @@
 ;; lisp-mode configuration
 (require 'lisp-mode-config)
 
-;; slime configuration
-(require 'slime-config)
 
 ;; Keybindings
 (require 'key-bindings)
