@@ -1,6 +1,0 @@
-[submodule "plugins/clojure-modules/slime"]
-	path = plugins/clojure-modules/slime
-	url = git://github.com/technomancy/slime.git
-[submodule "plugins/clojure-modules/ac-slime"]
-	path = plugins/clojure-modules/ac-slime
-	url = git://github.com/purcell/ac-slime.git
