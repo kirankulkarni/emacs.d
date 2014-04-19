@@ -25,7 +25,9 @@
                               cl-lib
                               clojure-mode
                               dash
+                              distel
                               elpy
+                              erlang-mode
                               flymake
                               flymake-cursor
                               js2-mode
