@@ -16,7 +16,7 @@
       (goto-char (point-max))
       (eval-print-last-sexp))))
 
-
+(add-to-list 'el-get-recipe-path el-get-my-recipes)
 
 (defvar el-get-my-packages (append
                             '(ac-nrepl
@@ -24,6 +24,7 @@
                               cider
                               cl-lib
                               clojure-mode
+                              color-theme-pack
                               dash
                               distel
                               elpy
