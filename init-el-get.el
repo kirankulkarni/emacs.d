@@ -25,6 +25,7 @@
                               cl-lib
                               clojure-mode
                               color-theme-pack
+                              color-theme-zenburn
                               dash
                               distel
                               elpy
