@@ -1,6 +1,3 @@
-[submodule "plugins/js2-mode"]
-	path = plugins/js2-mode
-	url = git://github.com/mooz/js2-mode.git
 [submodule "plugins/clojure-modules/slime"]
 	path = plugins/clojure-modules/slime
 	url = git://github.com/technomancy/slime.git
