@@ -76,7 +76,7 @@
 (require 'init-el-get)
 
 ;;; load theme
-(load-theme 'obsidian t)
+(load-theme 'zenburn t)
 
 ;; Require my customizations
 (require 'kk-customizations)

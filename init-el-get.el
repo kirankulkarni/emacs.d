@@ -33,6 +33,7 @@
                               erlang-mode
                               flymake
                               flymake-cursor
+                              ibuffer-vc
                               js2-mode
                               magit
                               markdown-mode
