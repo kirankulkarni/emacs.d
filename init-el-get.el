@@ -37,6 +37,7 @@
                               js2-mode
                               magit
                               markdown-mode
+                              org-mode
                               paredit
                               s
                               yasnippet)
