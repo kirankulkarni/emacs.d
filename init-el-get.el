@@ -19,6 +19,8 @@
 (add-to-list 'el-get-recipe-path el-get-my-recipes)
 
 (defvar el-get-my-packages (append
+                            (when (eq system-type 'darwin)
+                              '(exec-path-from-shell))
                             '(ac-nrepl
                               auto-complete
                               cider
@@ -28,7 +30,7 @@
                               color-theme-obsidian
                               color-theme-zenburn
                               dash
-                              distel
+                              ;; distel
                               elpy
                               erlang-mode
                               flymake
