@@ -46,6 +46,7 @@
                               org-mode
                               paredit
                               s
+                              yaml-mode
                               yasnippet)
                             (mapcar 'el-get-source-name el-get-sources)))
 
