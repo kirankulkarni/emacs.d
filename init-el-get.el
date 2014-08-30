@@ -18,12 +18,16 @@
 
 (add-to-list 'el-get-recipe-path el-get-my-recipes)
 
+(setq el-get-sources
+      '((:name cider
+               :checkout "v0.7.0")))
+
+
 (defvar el-get-my-packages (append
                             (when (eq system-type 'darwin)
                               '(exec-path-from-shell))
                             '(ac-nrepl
                               auto-complete
-                              cider
                               cl-lib
                               clojure-mode
                               color-theme-pack
