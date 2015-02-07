@@ -34,11 +34,14 @@
                               color-theme-obsidian
                               color-theme-zenburn
                               dash
-                              ;; distel
+                              distel
                               elpy
                               erlang-mode
                               flymake
                               flymake-cursor
+                              go-autocomplete
+                              go-eldoc
+                              go-mode
                               ibuffer-vc
                               js2-mode
                               magit
