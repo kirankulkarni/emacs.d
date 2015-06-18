@@ -20,26 +20,25 @@
 
 (setq el-get-sources
       '((:name cider
-               :checkout "v0.7.0")))
+               :checkout "v0.9.0")))
 
 
 (defvar el-get-my-packages (append
                             (when (eq system-type 'darwin)
                               '(exec-path-from-shell))
-                            '(ac-nrepl
-                              auto-complete
-                              cl-lib
+                            '(cl-lib
                               clojure-mode
                               color-theme-pack
                               color-theme-obsidian
                               color-theme-zenburn
+                              company-mode
                               dash
                               distel
                               elpy
                               erlang-mode
                               flymake
                               flymake-cursor
-                              go-autocomplete
+                              ;; go-autocomplete
                               go-eldoc
                               go-mode
                               ibuffer-vc
