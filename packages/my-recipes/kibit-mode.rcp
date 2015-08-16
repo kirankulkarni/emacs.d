@@ -1,0 +1,6 @@
+(:name kibit-mode
+       :type git
+       :url "https://github.com/aredington/kibit-mode.git"
+       :after (progn
+                (require 'kibit-mode)
+                (add-hook 'clojure-mode-hook 'kibit-mode)))

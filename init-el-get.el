@@ -28,6 +28,7 @@
                               '(exec-path-from-shell))
                             '(cl-lib
                               clojure-mode
+                              kibit-mode
                               color-theme-pack
                               color-theme-obsidian
                               color-theme-zenburn
