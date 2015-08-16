@@ -82,6 +82,11 @@
 
 (eval-after-load 'clojure-mode
   '(progn
+     (setq cider-prompt-for-symbol nil
+           cider-mode-line nil
+           cider-annotate-completion-candidates t
+           cider-completion-annotations-include-ns 'always
+           cider-show-error-buffer 'except-in-repl)
      (put-clojure-indent 'describe 'defun)
      (put-clojure-indent 'testing 'defun)
      (put-clojure-indent 'given 'defun)
