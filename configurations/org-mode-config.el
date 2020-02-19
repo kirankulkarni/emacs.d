@@ -1,6 +1,6 @@
 
 ;;; Setting up Org default-notes-file
-(setq org-directory "~/.org-files"
+(setq org-directory "~/.org_files"
       org-archive-directory (concat org-directory "/archived")
       org-archive-location (concat org-archive-directory "/%s_archive::")
       org-default-notes-file (concat org-directory "/captures.org")
@@ -37,19 +37,24 @@
 ;; @ Insert a note
 ;; / seperates entering action and leaving action of a state
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t!/!)" "ACTIVE(a!/!)" "WAITING(w@/!)" "COMMITTED(c@/!)" "|" "DONE(d!/!)" "VERIFIED(v!/!)" "JUNKED(j@/!)")
-              (sequence "PROJECT(p)" "LATER(l@/!)" "BUG(b!/@)" "FEATURE(f!/!)"
-                        "MAINT(m!/!)" "|" "SOMEDAY(s)" "CANCELLED(n@/!)"))))
+      (quote (;; Normal TODO workflow
+              (sequence "TODO(t)" "ACTIVE(p!/!)" "|" "DONE(d!/!)" "CANCELLED(c!/!)")
+              ;; Features Workflow
+              (sequence "SPEC-REVIEW(s)" "DEV-SPEC(a!/@)" "DEV(w!/@)" "|" "RELEASED(r!/!)")
+              (sequence "T1" "T2"))))
 
 ;; Colorize your keywords
 (setq org-todo-keyword-faces
-      (quote (("TODO"      :foreground "red"          :weight bold)
-              ("ACTIVE"    :foreground "orange"       :weight bold)
-              ("WAITING"   :foreground "yellow"       :weight bold)
-              ("COMMITTED" :foreground "lightblue"    :weight bold)
-              ("VERIFIED"  :foreground "forest green" :weight bold)
-              ("DONE"      :foreground "forest green" :weight bold)
-              ("JUNKED"    :foreground "lightgreen"   :weight bold))))
+      (quote (("TODO"  . org-warning)
+              ("ACTIVE" .  (:foreground "yellow" :weight bold))
+              ("DONE" . (:foreground "forest green" :weight bold))
+
+              ("SPEC-REVIEW" . (:foreground "lightblue" :weight bold))
+              ("DEV-SPEC" . (:foreground "orange" :weight bold))
+              ("DEV" . (:foreground "yellow" :weight bold))
+              ("RELEASED" . (:foreground "forest green" :weight bold)))))
+
+
 
 ;;; Enforcing the todo dependencies so that parent can not be marked as done
 ;;; until children are done
@@ -83,13 +88,13 @@
 ;; ---------------
 
 ;; Tags List
-(setq org-tag-alist '((:startgroup . nil)
-                      ("work" . ?w)
-                      ("personal" . ?p)
-                      (:endgroup . nil)
-                      (:startgroup . nil)
-                      ("next-release" . ?n)
-                      (:endgroup . nil)))
+;; (setq org-tag-alist '((:startgroup . nil)
+;;                       ("work" . ?w)
+;;                       ("personal" . ?p)
+;;                       (:endgroup . nil)
+;;                       (:startgroup . nil)
+;;                       ("next-release" . ?n)
+;;                       (:endgroup . nil)))
 
 ;;; If you find that most of the time you need only a single key press to
 ;;; modify your list of tags: uncomment the following command
@@ -125,6 +130,7 @@
 ;;; C - Cancel the clock all-together
 
 (org-clock-persistence-insinuate)
+
 (setq org-clock-persist 'history
       org-drawers (quote ("PROPERTIES" "LOGBOOK" "CLOCK"))
       org-clock-into-drawer "CLOCK"
@@ -194,51 +200,47 @@ Skips capture tasks and tasks with subtasks"
 (add-hook 'org-agenda-mode-hook '(lambda ()
                                    (hl-line-mode 1)))
 
-(setq org-stuck-projects
-      '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED-SOMEDAY" nil nil "SCHEDULED:\\|DEADLINE:\\|NOTSTUCK:")
+(setq ;; org-stuck-projects
+      ;; '("TODO={.+}-NOTSTUCK/-DONE-ACTIVE-VERIFIED-SOMEDAY" nil nil "SCHEDULED:\\|DEADLINE:\\|NOTSTUCK:")
       org-agenda-span 1
       org-agenda-start-on-weekday nil
       org-agenda-sorting-strategy
       '((agenda habit-down time-up priority-down effort-up category-keep)
-       (todo todo-state-up priority-down category-keep)
-       (tags priority-down category-keep)
-       (search category-keep))
+        (todo todo-state-up priority-down category-keep)
+        (tags priority-down category-keep)
+        (search category-keep))
       org-agenda-use-time-grid t
       org-agenda-time-grid
       '(nil "----------------"
             (800 1000 1200 1400 1600 1800 2000))
-      org-agenda-log-mode-items '(clock))
+      org-agenda-log-mode-items '(clock)
+      org-agenda-skip-deadline-if-done t
+      org-agenda-skip-scheduled-if-done t)
+
+
 
 
 (setq org-agenda-custom-commands
-      '(("a" "Agenda"
+      '(("x" "Personal Agenda"
         ((agenda "" nil)
-         (todo "ACTIVE")
-         (tags-todo "work+current/!-DONE-ACTIVE-VERIFIED-SOMEDAY-PROJECT"
-                    ((org-agenda-overriding-header
-                      "Current Project Tasks")
-                     (org-agenda-todo-ignore-scheduled t)
-                     (org-agenda-todo-ignore-deadlines t)
-                     (org-tags-match-list-sublevels t)
-                     (org-agenda-sorting-strategy
-                      '(effort-up category-keep))))
+         (tags-todo "features|backlog/!+ACTIVE|+DEVSPEC|+DEV")
          nil))))
 
 
 ;; setup for Reminder
 ;; setup for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
-(defadvice org-agenda-to-appt (before wickedcool activate)
-  "Clear the appt-time-msg-list."
-  (setq appt-time-msg-list nil))
+;; (defadvice org-agenda-to-appt (before wickedcool activate)
+;;   "Clear the appt-time-msg-list."
+;;   (setq appt-time-msg-list nil))
 
-(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+;; (add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
 
-(appt-activate t)
+;; (appt-activate t)
 
 ;; If we leave Emacs running overnight -
 ;; reset the appointments one minute after midnight
-(run-at-time "24:01" nil 'org-agenda-to-appt)
+;; (run-at-time "24:01" nil 'org-agenda-to-appt)
 
 
 ;;; Unused variables
@@ -255,6 +257,9 @@ Skips capture tasks and tasks with subtasks"
 ;; I mostly write code documents and this is never the intended behavior
 ;; Copied from Vedang Manerikar's configuration
 (setq org-export-with-sub-superscripts nil)
+
+(eval-after-load "org"
+  '(require 'ox-md nil t))
 
 ;; END of org mode configuration
 (provide 'org-mode-config)

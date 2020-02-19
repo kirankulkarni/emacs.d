@@ -1,5 +1,5 @@
 (:name kibit-mode
-       :type git
+       :type github
        :url "https://github.com/aredington/kibit-mode.git"
        :after (progn
                 (require 'kibit-mode)

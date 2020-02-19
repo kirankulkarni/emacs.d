@@ -1,7 +1,7 @@
 ;; Configuration for ido-mode
 
-;; Setting ido 
-(setq 
+;; Setting ido
+(setq
   ido-save-directory-list-file (concat session-files-dir "/cache/ido.last")
   ido-case-fold  t
   ido-enable-last-directory-history t
@@ -14,6 +14,7 @@
   ido-confirm-unique-completion t
   ido-create-new-buffer 'always
   ido-enable-tramp-completion t
+  ido-use-virtual-buffers t
   ;; do not ask for confirmation
   confirm-nonexistent-file-or-buffer nil)
 

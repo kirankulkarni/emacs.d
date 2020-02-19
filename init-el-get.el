@@ -18,40 +18,30 @@
 
 (add-to-list 'el-get-recipe-path el-get-my-recipes)
 
-(setq el-get-sources
-      '((:name cider
-               :checkout "v0.9.0")))
-
 
 (defvar el-get-my-packages (append
                             (when (eq system-type 'darwin)
                               '(exec-path-from-shell))
                             '(cl-lib
                               clojure-mode
+                              cider
                               kibit-mode
                               color-theme-pack
                               color-theme-obsidian
                               color-theme-zenburn
                               company-mode
                               dash
-                              distel
                               elpy
-                              erlang-mode
                               flymake
                               flymake-cursor
-                              ;; go-autocomplete
-                              go-eldoc
-                              go-mode
                               ibuffer-vc
                               js2-mode
                               magit
                               markdown-mode
-                              org-mode
                               paredit
                               s
                               yaml-mode
-                              yasnippet)
-                            (mapcar 'el-get-source-name el-get-sources)))
+                              yasnippet)))
 
 
 (el-get 'sync el-get-my-packages)
