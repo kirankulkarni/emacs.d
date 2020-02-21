@@ -13,15 +13,6 @@
       `((".*" ,(concat session-files-dir "auto-save-list/") t)))
 
 
-;;; Move this hook to ibuffer-vc el-get config
-(add-hook 'ibuffer-hook
-    (lambda ()
-      (ibuffer-vc-set-filter-groups-by-vc-root)
-      (ibuffer-do-sort-by-alphabetic)))
-
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'text-mode-hook 'turn-on-flyspell)
-
 
 ;; ido mode configuration
 (require 'ido-mode-config)

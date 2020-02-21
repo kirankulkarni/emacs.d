@@ -39,6 +39,11 @@
 ;; Automatically update buffers if file content on the disk has changed.
 (global-auto-revert-mode t)
 
+;;Enable paren matching highlighting
+(show-paren-mode 1)
+
+;; Display column number in mode line.
+(column-number-mode t)
 
 ;; Uniquify ensures that buffer name are unique. It uses part of the
 ;; file-path to ensure this uniqueness. If `Makefile` is present in
@@ -113,6 +118,10 @@
  slime-net-coding-system 'utf-8-unix)
 
 
+
+;;; ---------------------- Configuring Text Mode  ------------------------------
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
 
 
 (provide 'my-defaults)
