@@ -1,10 +1,38 @@
 ;;; Master configuration file
 
-;;; No GUI
 
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;;; ------------------------- Load Path files ----------------------------------
+
+;;; Creating this new var to capture the emacs dot directory
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
+
+;;; Taken from Starter-kit
+;;Emacs load path
+(let* ((default-directory dotfiles-dir)
+       (orig-load-path load-path))
+  (setq load-path (cons dotfiles-dir nil))
+  (normal-top-level-add-subdirs-to-load-path)
+  (nconc load-path orig-load-path))
+
+
+(setq dotfiles-etc-dir (concat dotfiles-dir "etc/"))
+
+;;Add My directrories in load path
+(add-to-list 'load-path (concat dotfiles-dir "/plugins"))
+(add-to-list 'load-path (concat dotfiles-dir "/configurations"))
+
+
+;;; ------------------ Set defaults as per my liking ---------------------------
+
+(require 'my-defaults)
+
+
+;;; ------------------------ Setting up session --------------------------------
+(setq session-files-dir (concat dotfiles-dir "session-files/"))
+
+
+
 
 ;;; Auto-Generated
 (custom-set-variables
@@ -62,32 +90,11 @@
 
 (show-paren-mode 1) ;;Show paren matching
 
-;;; Taken from Starter-kit
-;;Emacs load path
-(let* ((my-lisp-dir "~/.emacs.d/")
-       (default-directory my-lisp-dir)
-       (orig-load-path load-path))
-  (setq load-path (cons my-lisp-dir nil))
-  (normal-top-level-add-subdirs-to-load-path)
-  (nconc load-path orig-load-path))
 
-;; Load path etc.
-
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
-
-(setq dotfiles-etc-dir (concat dotfiles-dir "etc/"))
-
-;;My files
-(add-to-list 'load-path (concat dotfiles-dir "/plugins"))
-(add-to-list 'load-path (concat dotfiles-dir "/configurations"))
-(setq session-files-dir (concat dotfiles-dir "session-files/"))
 
 ;;; Add /usr/local/bin in PATH
 (add-to-list 'exec-path "/usr/local/bin")
 
-;; Common libraries
-(require 'uniquify)
 
 ;;; ELPA
 (require 'package)

@@ -1,5 +1,10 @@
 ;; Configuration for ido-mode
 
+
+;; Enable IDO everywhere in all context where it is useful.
+(ido-mode t)
+(ido-everywhere t)
+
 ;; Setting ido
 (setq
   ido-save-directory-list-file (concat session-files-dir "/cache/ido.last")
@@ -18,9 +23,6 @@
   ;; do not ask for confirmation
   confirm-nonexistent-file-or-buffer nil)
 
-;; Copied from CDK emacs config
-(ido-mode t)
-(ido-everywhere t)
 
 
 ;; Copied from Vedang's emacs config

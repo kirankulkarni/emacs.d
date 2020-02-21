@@ -1,3 +1,5 @@
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (eval-after-load 'magit
   '(progn
      (set-face-foreground 'magit-diff-added "green3")
