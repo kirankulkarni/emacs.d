@@ -1,0 +1,4 @@
+(:name erlang
+ :type emacswiki
+ :description "Erlang Major Mode"
+ :website "http://www.erlang.org/download/contrib/erlang.el")

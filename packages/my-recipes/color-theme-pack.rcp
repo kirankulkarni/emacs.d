@@ -1,0 +1,8 @@
+(:name color-theme-pack
+       :description "A collection of custom themes for Emacs. All the themes are named after famous programmers."
+       :website "https://github.com/owainlewis/emacs-color-themes"
+       :minimum-emacs-version "24"
+       :type github
+       :pkgname "owainlewis/emacs-color-themes"
+       :prepare (add-to-list 'custom-theme-load-path (concat default-directory
+                                                             "themes/")))
