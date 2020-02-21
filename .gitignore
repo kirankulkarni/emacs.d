@@ -12,3 +12,4 @@ session.*
 session-files/*
 url/
 el-get/
+elpa/
