@@ -23,23 +23,29 @@
                             (when (eq system-type 'darwin)
                               '(exec-path-from-shell))
                             '(cl-lib
-                              clojure-mode
-                              cider
-                              kibit-mode
+                              dash
+                              s
                               color-theme-pack
                               color-theme-obsidian
                               color-theme-zenburn
                               company-mode
-                              dash
-                              elpy
+                              ibuffer-vc
+                              avy
+                              ;; Ensure that texinfo is installed in the system
+                              ;; I followed https://stuff-things.net/2018/01/30/building-emacs-25-on-macos-high-sierra/
+                              ;; to ensure that makeinfo is updated.
+                              ;; It still gave me error and then I installed manually using el-get-install function
+                              swiper
+                              magit
+                              clojure-mode
+                              cider
                               flymake
                               flymake-cursor
-                              ibuffer-vc
+                              elpy
                               js2-mode
-                              magit
                               markdown-mode
                               paredit
-                              s
+                              pig-mode
                               yaml-mode
                               yasnippet)))
 
