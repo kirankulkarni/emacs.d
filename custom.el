@@ -19,7 +19,7 @@
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files nil)
- '(package-selected-packages (quote (queue)))
+ '(package-selected-packages (quote (csv-mode queue)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
@@ -50,7 +50,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Anonymous Pro" :foundry "unknown" :slant normal :weight normal :height 130 :width normal)))))
+ '(default ((t (:family "JetBrains Mono" :foundry "unknown" :slant normal :weight normal :height 130 :width normal)))))
 
 
 (provide 'custom)
